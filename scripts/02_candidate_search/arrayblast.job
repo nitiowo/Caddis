@@ -1,0 +1,26 @@
+#!/bin/bash
+#$ -N multi_blast
+#$ -q largemem
+#$ -pe smp 8
+#$ -M nvincen2@nd.edu
+#$ -m abe
+#$ -t 1-20
+
+trans_dir='/temp180/mpfrende/nvincen2/Caddis/trinity_indiv_out/transcriptomes'
+script_dir='/temp180/mpfrende/nvincen2/Caddis/workspace'
+outdir='/temp180/mpfrende/nvincen2/Caddis/BLAST_notes/results/LimLuna_transcripts_vs_caddis'
+query1='/temp180/mpfrende/nvincen2/Caddis/Reference/Lim_luna/limLuna_NaCh-alpha_transcripts.fa'
+query2='/temp180/mpfrende/nvincen2/Caddis/Reference/Lim_luna/limLuna_NaCh-alpha_proteins.fa'
+db_dir='/temp180/mpfrende/nvincen2/Caddis/BLAST_notes/results/BLAST_DBs'
+
+SAMPLES=($trans_dir/*.fasta)
+SAMPLE_PATH=${SAMPLES[$SGE_TASK_ID - 1]}
+base=$(basename $SAMPLE_PATH _L007_trinity.Trinity.fasta)
+
+cd $outdir
+mkdir $base
+cd $base
+
+bash ${script_dir}/run_blastn.sh ${query1} ${db_dir}/${base}/${base}_transcriptome_db
+bash ${script_dir}/run_tblastx.sh ${query1} ${db_dir}/${base}/${base}_transcriptome_db
+bash ${script_dir}/run_tblastn.sh ${query2} ${db_dir}/${base}/${base}_transcriptome_db

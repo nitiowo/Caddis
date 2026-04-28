@@ -5,7 +5,7 @@
 # If your samples are different tissue types/samples that can be mapped to each other for assembly, include all samples in the same Trinity run - don't use this script.
 # See https://github.com/trinityrnaseq/trinityrnaseq/wiki/Running-Trinity for more info
 # Change filename formatting as required.
-# Use trimmed treads
+# Use trimmed reads
 
 cd "/temp180/mpfrende/nvincen2/Caddis"  # Working directory should be above the directory where the trinity image is
 
@@ -26,7 +26,7 @@ for left_file in "${INPUT_DIR}"/*_R1_trimmed.fastq.gz; do
   # Derive the sample name from the filename (adjust pattern if needed). $left_file and $right_file are the sample names passed to the wrapper script.
   sample=$(basename "${left_file}" _R1_trimmed.fastq.gz)
   right_file="${INPUT_DIR}/${sample}_R2_trimmed.fastq.gz"
-  
+
   # Verify that the right file exists
   if [[ ! -f "${right_file}" ]]; then
     echo "Paired file for sample ${sample} not found, skipping..."
@@ -56,9 +56,6 @@ for left_file in "${INPUT_DIR}"/*_R1_trimmed.fastq.gz; do
 # Run the Trinity wrapper script with the current sample's files and output directory
 bash ${WRAPPER_SCRIPT} ${left_file} ${right_file} ${outdir} ${CPU} ${MEMORY}
 EOF
-
-  # Make the job script executable (optional)
-  # chmod +x "${job_script}"
 
   # Submit the job script to SGE
   qsub "${job_script}"

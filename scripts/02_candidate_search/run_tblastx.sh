@@ -1,5 +1,5 @@
 #!/bin/bash --login
-# usage: run_DROStblastx <query> <transcriptome_blastdb>
+# usage: run_tblastx.sh <query_file> <transcriptome_blastdb>
 
 module load bio/0724
 

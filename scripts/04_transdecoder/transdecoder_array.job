@@ -1,0 +1,18 @@
+#!/bin/bash
+#$ -N multi_transdecoder           # Job name
+#$ -q largemem                    # Queue selection
+#$ -pe smp 8   # Parallel environment and CPU cores
+#$ -M nvincen2@nd.edu                    # Email for job notifications
+#$ -m abe                         # Email on (a)bort, (b)egin, and (e)nd
+#$ -t 1-21
+
+samp_dir='/temp180/mpfrende/nvincen2/Caddis/BLAST_notes/results/LimLuna_transcripts_vs_caddis/filters/cleaned'
+func_path='/temp180/mpfrende/nvincen2/Caddis'
+out_dir='/temp180/mpfrende/nvincen2/Caddis/BLAST_notes/results/LimLuna_transcripts_vs_caddis/filters/Transdecoder/p1_noflag'
+
+SAMPLES=($samp_dir/*.fasta)
+SAMPLE_PATH=${SAMPLES[$SGE_TASK_ID - 1]}
+
+singularity exec -e ${func_path}/transdecoder.v5.7.1.simg TransDecoder.LongOrfs -t $SAMPLE_PATH
+
+singularity exec -e ${func_path}/transdecoder.v5.7.1.simg TransDecoder.Predict -t $SAMPLE_PATH --no_refine_starts

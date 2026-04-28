@@ -1,5 +1,5 @@
 #!/bin/bash --login
-# usage: run_DROSmakeDB <transcriptome_file>
+# usage: run_makeblastdb.sh <transcriptome_file>
 
 module load bio/0724
 
