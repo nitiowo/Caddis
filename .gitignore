@@ -1,2 +1,39 @@
-# Data
+# Raw data and accessory files
+data/**
+Reference/**
+random/**
+**/*helper*
+
+# Outputs in general
+**/*outputs**
+
+# Generated file types
+**/*.csv
+**/*.tsv
+**/*.txt
+**/*.json
+**/*.png
+**/*.pdf
+**/*.html
+**/*.bed
+**/*.fa
+**/*.fa.*
 **/*.fasta
+**/*.fasta*
+**/*.fq
+**/*.fq.gz
+**/*.fastq
+**/*.fastq.gz
+**/*.gtf
+**/*.gff
+**/*.gbff
+**/*.zip
+**/*.simg
+**/*.log
+**/*.treefile
+**/*.contree
+**/*.iqtree
+
+# Markdowns except readmes
+**/*.md
+!**/*README*
