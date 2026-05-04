@@ -1,33 +1,19 @@
 # CaddisRNA
 
-- Trinity scripts and job submission for per-sample transcriptome assembly
-- BLASTdb scripts for sodium channel transcript extraction
-- TransDecoder array job for ORF prediction on cleaned candidate FASTAs
-- R scripts that build representative sodium-channel protein/CDS datasets, align representatives, and summarize amino-acid variation
 
-- You still have to use geneious to filter and clean the FASTAs after extraction
+- `nach_extraction/` for transcriptome assembly, candidate recovery, manual filtering, ORF prediction, and representative-sequence builds
+- `coi_phylogeography/` for COI dataset construction and phylogeographic analyses
 
-## Script Layout
+## Script layout
 
-`scripts/assembly/`
+### `nach_extraction/01_assembly/`
 
-- `run_trinity.sh`
-- `submit_trinity_jobs.sh`
+### `nach_extraction/02_candidate_search/`
 
-`scripts/candidate_search/`
+### `nach_extraction/03_manual_filtering/`
 
-- `run_makeblastdb.sh`
-- `run_blastn.sh`
-- `run_tblastx.sh`
-- `run_tblastn.sh`
-- `arrayblast.job`
+### `nach_extraction/04_transdecoder/`
 
-`scripts/transdecoder/`
+### `nach_extraction/05_representative_sequences/`
 
-- `transdecoder_array.job`
-
-`scripts/variants/`
-
-- `build_nach_dataset.R`
-- `build_nach_alignment.R`
-- `build_nach_variants.R`
+### `coi_phylogeography/scripts/`
