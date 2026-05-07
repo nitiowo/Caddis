@@ -5,7 +5,7 @@ random/**
 **/*helper*
 
 # Outputs in general
-**/*outputs**
+**/*outputs/**
 
 # Generated file types
 **/*.csv
@@ -37,3 +37,7 @@ random/**
 # Markdowns except readmes
 **/*.md
 !**/*README*
+
+# Accessory files
+**/*notes*
+**/*pycache*

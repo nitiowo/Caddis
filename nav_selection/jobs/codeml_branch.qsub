@@ -1,0 +1,17 @@
+#!/bin/bash
+#$ -cwd
+#$ -V
+#$ -N nav_codeml_branch
+#$ -pe smp 4
+#$ -q largemem
+#$ -o nav_selection/outputs/model_raw/logs/uge_codeml_stdout.log
+#$ -e nav_selection/outputs/model_raw/logs/uge_codeml_stderr.log
+
+set -euo pipefail
+
+cd "$SGE_O_WORKDIR"
+mkdir -p nav_selection/outputs/model_raw/logs
+
+conda activate nav-models
+
+bash nav_selection/scripts/codeml_branch_model.sh

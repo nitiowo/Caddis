@@ -1,5 +1,3 @@
-# ---- Setup ----
-
 library(tidyverse)
 library(Biostrings)
 

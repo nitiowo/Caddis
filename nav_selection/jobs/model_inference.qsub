@@ -1,0 +1,17 @@
+#!/bin/bash
+#$ -cwd
+#$ -V
+#$ -N nav_model_inference
+#$ -pe smp 8
+#$ -q largemem
+#$ -o nav_selection/outputs/model_raw/logs/uge_stdout.log
+#$ -e nav_selection/outputs/model_raw/logs/uge_stderr.log
+
+set -euo pipefail
+
+cd "$SGE_O_WORKDIR"
+mkdir -p nav_selection/outputs/model_raw/logs
+
+conda activate nav-models
+
+bash nav_selection/scripts/model_inference.sh

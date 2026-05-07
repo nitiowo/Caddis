@@ -76,5 +76,5 @@ variant_matrix <- var_df %>%
 
 write_csv(variant_matrix, file.path(var_dir, "protein_variant_matrix.csv"))
 
-# Lifl vs non-Lifl matrix
-lifl_mat <- variant_mat %>%
+# # Lifl vs non-Lifl matrix
+# lifl_mat <- variant_mat %>%
