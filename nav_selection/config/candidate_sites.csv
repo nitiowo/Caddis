@@ -1,0 +1,15 @@
+aln_col,candidate,candidate_tier,candidate_label,musca_aa_number,dmel_aa_number,limluna_aa_number,limluna_aa,candidate_aa,feature_class,primary_context,why_candidate
+71,TRUE,1,D59V,59,59,70,D,V,Cytoplasmic region,Known insecticide position,insecticide resistance position; different aa change
+388,TRUE,1,Q376L,376,376,386,Q,L,Pore-forming region,TTX or pore motif,Next to DI major ttx binding motif; pore-forming region
+447,TRUE,1,E435K,435,435,445,E,K,Cytoplasmic region,Exact insecticide match,insecticide resistance position; exact aa change
+1004,TRUE,2,R920Q,920,924,906,R,Q,Voltage sensor,Insecticide cluster,IIS4S5 super kdr cluster
+1010,TRUE,3,G926S,926,930,912,G,S,Cytoplasmic region,Insecticide cluster,IIS4S5 super kdr cluster; lifl_change_ratio 0.8
+1098,TRUE,1,V1010A,1010,1014,996,V,A,Transmembrane helix,Exact insecticide match,insecticide resistance position; exact aa change
+1100,TRUE,2,G1012S,1012,1016,998,G,S,Transmembrane helix,Insecticide cluster,IIS6 kdr cluster
+1101,TRUE,1,N1013K,1013,1017,999,N,K,Transmembrane helix,Known insecticide position,"insecticide resistance position; different aa change, IIS6 kdr cluster"
+1600,TRUE,2,A1410T,1410,1401,1389,A,T,Voltage sensor,Known insecticide position,insecticide resistance position; different aa change; lifl_change_ratio 0.8333
+1686,TRUE,1,F1496S,1496,1487,1475,F,S,Extracellular region,TTX or pore motif,next to DIII major ttx binding motif; lifl_change_ratio 0.8333
+1726,TRUE,3,S1536A,1536,1527,1515,S,A,Extracellular region,Insecticide cluster,DIII-S6 pyrethroid sensing cluster; lifl_change_ratio 0.8333
+1737,TRUE,2,I1547L,1547,1538,1526,I,L,Transmembrane helix,Insecticide cluster,DIII-S6 pyrethroid sensing cluster
+1738,TRUE,2,I1548V,1548,1539,1527,I,V,Transmembrane helix,Insecticide cluster,DIII-S6 pyrethroid sensing cluster
+1973,TRUE,1,L1782I,1782,1773,1761,L,I,Transmembrane helix,TTX or pore motif,ttx DIV minor binding motif

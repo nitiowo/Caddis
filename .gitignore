@@ -9,6 +9,8 @@ random/**
 
 # Generated file types
 **/*.csv
+!nav_selection/config/candidate_sites.csv
+!nav_selection/config/nav_primary_exclude_samples.csv
 **/*.tsv
 **/*.txt
 **/*.json
